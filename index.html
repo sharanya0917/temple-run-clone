@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temple Rush</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game-shell">
+      <div class="hud">
+        <div class="stat-box">
+          <span class="label">Score</span>
+          <span id="score">0</span>
+        </div>
+        <div class="stat-box">
+          <span class="label">Coins</span>
+          <span id="coins">0</span>
+        </div>
+      </div>
+
+      <canvas id="gameCanvas" width="420" height="720"></canvas>
+
+      <div id="startOverlay" class="overlay visible">
+        <div class="panel">
+          <h1>Temple Rush</h1>
+          <p>Run, dodge, jump, and slide through the ruins.</p>
+          <ul>
+            <li>Move: A / D or Left / Right</li>
+            <li>Jump: W / Up / Space</li>
+            <li>Slide: S / Down</li>
+            <li>Swipe on mobile</li>
+          </ul>
+          <button id="startButton">Start Game</button>
+        </div>
+      </div>
+
+      <div id="gameOverOverlay" class="overlay hidden">
+        <div class="panel game-over-panel">
+          <h2>Game Over</h2>
+          <p>Final score: <span id="finalScore">0</span></p>
+          <button id="restartButton">Play Again</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>

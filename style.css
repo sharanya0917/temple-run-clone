@@ -1,0 +1,150 @@
+:root {
+  --bg-1: #0b1020;
+  --bg-2: #1b243a;
+  --gold: #f8d36b;
+  --gold-deep: #d39d2a;
+  --stone: #3d4859;
+  --stone-dark: #202937;
+  --sand: #d4b177;
+  --grass: #4c7d52;
+  --danger: #c75454;
+  --coin: #f5c451;
+  --sky: #8ec0d9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at top, #1d2a43, var(--bg-1) 55%);
+  font-family: Arial, Helvetica, sans-serif;
+  color: #f5f3ee;
+}
+
+.game-shell {
+  position: relative;
+  width: min(92vw, 420px);
+}
+
+.hud {
+  position: absolute;
+  top: 14px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.stat-box {
+  background: rgba(12, 15, 20, 0.52);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 8px 12px;
+  min-width: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: blur(4px);
+}
+
+.label {
+  font-size: 0.7rem;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+  color: #d2d8e6;
+}
+
+#score,
+#coins,
+#finalScore {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(to bottom, #a9d6ec 0%, #7eb4c7 26%, #d9bf8d 27%, #b48a53 100%);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(7, 11, 18, 0.38);
+  border-radius: 18px;
+  z-index: 3;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.overlay.visible {
+  display: grid;
+}
+
+.panel {
+  width: min(80%, 300px);
+  background: rgba(17, 19, 25, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+  padding: 20px 18px;
+  text-align: center;
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.32);
+}
+
+.panel h1,
+.panel h2 {
+  margin: 0 0 12px;
+  color: var(--gold);
+}
+
+.panel p,
+.panel li {
+  color: #edf1f7;
+  line-height: 1.6;
+}
+
+.panel ul {
+  text-align: left;
+  margin: 12px 0 18px;
+  padding-left: 18px;
+}
+
+button {
+  appearance: none;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-deep));
+  color: #1b1b1b;
+  font-weight: 700;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  box-shadow: 0 8px 18px rgba(242, 183, 58, 0.28);
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.game-over-panel p {
+  margin-bottom: 16px;
+}
